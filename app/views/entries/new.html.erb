@@ -20,3 +20,12 @@
 
   <button>Save</button>
 </form>
+
+<%= form_with(model: @entry, local: true, html: { multipart: true }) do |f| %>
+  <!-- other fields… -->
+  <div class="mb-3">
+    <%= f.label :image, "Upload an image (optional)" %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

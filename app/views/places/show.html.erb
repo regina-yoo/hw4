@@ -14,3 +14,7 @@
 <p>
   <a href="/places">Back to All Places</a>
 </p>
+
+<% if logged_in? %>
+  <%= link_to "New Entry", new_entry_path(place_id: @place.id), class: "btn btn-primary mb-3" %>
+<% end %>
